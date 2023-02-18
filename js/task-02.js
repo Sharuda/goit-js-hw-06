@@ -13,3 +13,18 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+
+const listEl = document.querySelector('#ingredients');
+
+const func = arrayIngredients => {
+  return ingredients.map(name => {
+    const itemListIngredient = document.createElement('li');
+    itemListIngredient.textContent = name;
+    itemListIngredient.classList.add('item');
+
+    return itemListIngredient;
+  });
+};
+
+const element = func(ingredients);
+listEl.append(...element);
