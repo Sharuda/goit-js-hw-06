@@ -13,10 +13,6 @@ const incrementBtnEl = document.querySelector('[data-action="increment"]');
 const valueEl = document.querySelector('#value');
 
 const onClickDecrBtn = event => {
-  if (counterValue <= 0) {
-    console.log('erorr');
-    return;
-  }
   counterValue -= 1;
   valueEl.textContent = counterValue;
 };
