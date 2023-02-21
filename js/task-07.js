@@ -4,3 +4,9 @@
 // В результаті, перетягуючи повзунок, буде змінюватися розмір тексту.
 
 
+const inputChangeFontSizeEl = document.querySelector('#font-size-control');
+const textEl = document.querySelector('#text');
+
+inputChangeFontSizeEl.addEventListener('input', () => {
+    textEl.style.fontSize = `${event.currentTarget.value}px`;
+})
