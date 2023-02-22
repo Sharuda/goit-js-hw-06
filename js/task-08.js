@@ -12,7 +12,16 @@
 // 5. Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const submitBtnEl = document.querySelector('[type="submit"]');
-const inputEmailEl = document.querySelector('[type="email"]');
-const inputPasswordEl = document.querySelector('[type="password"]');
+const formEl = document.querySelector('.login-form');
 
-
+formEl.addEventListener('submit', event => {
+  event.preventDefault();
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
+  if (email.value === '' && password.value === '') {
+    alert('You need to fill in all the fields!');
+  }
+  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  event.currentTarget.reset();
+});
