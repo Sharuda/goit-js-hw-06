@@ -16,7 +16,7 @@ const ingredients = [
 
 const listEl = document.querySelector('#ingredients');
 
-const func = arrayIngredients => {
+const createIngredientsList = arrayIngredients => {
   return ingredients.map(name => {
     const itemListIngredient = document.createElement('li');
     itemListIngredient.textContent = name;
@@ -26,5 +26,5 @@ const func = arrayIngredients => {
   });
 };
 
-const element = func(ingredients);
+const element = createIngredientsList(ingredients);
 listEl.append(...element);

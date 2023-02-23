@@ -7,10 +7,9 @@ const inputTetxtEl = document.querySelector('#name-input');
 const nameEl = document.querySelector('#name-output');
 
 inputTetxtEl.addEventListener('input', event => {
-    if (event.currentTarget.value !== '') {
-        nameEl.textContent = event.currentTarget.value;
-    } 
-    else {
-         nameEl.textContent = 'Anonymous';
-      }
+    if (event.currentTarget.value.trim() !== '') {
+      nameEl.textContent = event.currentTarget.value.trim();
+    } else {
+      nameEl.textContent = 'Anonymous';
+    }
 });

@@ -19,9 +19,12 @@ formEl.addEventListener('submit', event => {
   const {
     elements: { email, password },
   } = event.currentTarget;
-  if (email.value === '' && password.value === '') {
+  if (email.value === '' || password.value === '') {
     alert('You need to fill in all the fields!');
   }
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  const formData = new FormData(event.currentTarget);
+  formData.email = email.value;
+  formData.password = password.value;
+  console.log(formData);
   event.currentTarget.reset();
 });

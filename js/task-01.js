@@ -12,5 +12,5 @@ console.log(`Number of categories: ${listItemsEl.length}`);
 
 for (const item of listItemsEl) {
   console.log(`Category: ${item.firstElementChild.textContent}`);
-  console.log(`Elements: ${item.querySelectorAll('li').length}`);
+  console.log(`Elements: ${item.lastElementChild.children.length}`);
 }

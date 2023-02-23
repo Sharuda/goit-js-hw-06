@@ -24,17 +24,20 @@ const containerBoxesEl = document.querySelector('#boxes');
 function createBoxes(amount) {
   amount = Number(inputEl.value);
   const divBoxes = [];
-  let fisrtDivSize = 30;
-  const stepSizeDiv = 10;
+  let firstDivSize = 30;
+  // let stepSizeDiv = 10;
 
   for (let i = 0; i < amount; i += 1) {
-    const div = document.createElement('div');
-    div.style.width = `${fisrtDivSize + stepSizeDiv * i}px`;
-    div.style.height = `${fisrtDivSize + stepSizeDiv * i}px`;
-    div.style.backgroundColor = getRandomHexColor();
+    // const div = document.createElement('div');
+    // div.style.width = `${fisrtDivSize + stepSizeDiv * i}px`;
+    // div.style.height = `${fisrtDivSize + stepSizeDiv * i}px`;
+    // div.style.backgroundColor = getRandomHexColor();
+    firstDivSize += 10 * i;
+    const div = `<div style="width: ${firstDivSize}px; height: ${firstDivSize}px; background-color: ${getRandomHexColor()}"></div>`;
     divBoxes.push(div);
   }
-  containerBoxesEl.append(...divBoxes);
+  // containerBoxesEl.append(...divBoxes);
+  containerBoxesEl.insertAdjacentHTML('beforeend', divBoxes.join(''));
 }
 
 function destroyBoxes() {
