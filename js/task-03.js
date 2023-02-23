@@ -28,5 +28,6 @@ const makeListItem = images
 
 listEl.style.display = 'flex';
 listEl.style.gap = '20px';
+listEl.style.listStyleType = 'none';
 
 listEl.insertAdjacentHTML('beforeend', makeListItem);
